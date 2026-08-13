@@ -256,5 +256,60 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(startGaleriaScroll, 3000);
         }, { passive: true });
     }
+
+    // -------------------------------------------------------------
+    // 8. Gallery Carousel Auto-scroll Loop
+    // -------------------------------------------------------------
+    const galleryCarousel = document.querySelector('.gallery-carousel');
+    if (galleryCarousel) {
+        let carouselInterval;
+
+        function startCarouselScroll() {
+            if (!carouselInterval) {
+                carouselInterval = setInterval(() => {
+                    const maxScroll = galleryCarousel.scrollWidth - galleryCarousel.clientWidth;
+                    // Move by approx one image width plus gap
+                    const img = galleryCarousel.querySelector('img');
+                    const scrollAmount = img ? (img.clientWidth + 24) : 400; // 24px is the 1.5rem gap
+                    
+                    let nextScroll = galleryCarousel.scrollLeft + scrollAmount;
+
+                    if (galleryCarousel.scrollLeft >= maxScroll - 10) {
+                        nextScroll = 0; // Loop back to start
+                    }
+
+                    galleryCarousel.scrollTo({
+                        left: nextScroll,
+                        behavior: 'smooth'
+                    });
+                }, 3000); // 3 seconds interval
+            }
+        }
+
+        startCarouselScroll();
+
+        // Pause on touch/hover
+        galleryCarousel.addEventListener('touchstart', () => {
+            if (carouselInterval) {
+                clearInterval(carouselInterval);
+                carouselInterval = null;
+            }
+        }, { passive: true });
+
+        galleryCarousel.addEventListener('touchend', () => {
+            setTimeout(startCarouselScroll, 3000);
+        }, { passive: true });
+
+        galleryCarousel.addEventListener('mouseenter', () => {
+            if (carouselInterval) {
+                clearInterval(carouselInterval);
+                carouselInterval = null;
+            }
+        });
+
+        galleryCarousel.addEventListener('mouseleave', () => {
+            startCarouselScroll();
+        });
+    }
 });
 
