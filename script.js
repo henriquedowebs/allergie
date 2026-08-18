@@ -260,56 +260,44 @@ document.addEventListener('DOMContentLoaded', () => {
     // -------------------------------------------------------------
     // 8. Gallery Carousel Auto-scroll Loop
     // -------------------------------------------------------------
-    const galleryCarousel = document.querySelector('.gallery-carousel');
-    if (galleryCarousel) {
-        let carouselInterval;
+    // CSS infinite animation is used instead.
 
-        function startCarouselScroll() {
-            if (!carouselInterval) {
-                carouselInterval = setInterval(() => {
-                    const maxScroll = galleryCarousel.scrollWidth - galleryCarousel.clientWidth;
-                    // Move by approx one image width plus gap
-                    const img = galleryCarousel.querySelector('img');
-                    const scrollAmount = img ? (img.clientWidth + 24) : 400; // 24px is the 1.5rem gap
-                    
-                    let nextScroll = galleryCarousel.scrollLeft + scrollAmount;
+    // -------------------------------------------------------------
+    // 9. Doctor Modals
+    // -------------------------------------------------------------
+    const modalButtons = document.querySelectorAll('[data-modal]');
+    const doctorModals = document.querySelectorAll('.doctor-modal-overlay');
+    const doctorCloseButtons = document.querySelectorAll('.doctor-modal-close');
 
-                    if (galleryCarousel.scrollLeft >= maxScroll - 10) {
-                        nextScroll = 0; // Loop back to start
-                    }
-
-                    galleryCarousel.scrollTo({
-                        left: nextScroll,
-                        behavior: 'smooth'
-                    });
-                }, 3000); // 3 seconds interval
-            }
-        }
-
-        startCarouselScroll();
-
-        // Pause on touch/hover
-        galleryCarousel.addEventListener('touchstart', () => {
-            if (carouselInterval) {
-                clearInterval(carouselInterval);
-                carouselInterval = null;
-            }
-        }, { passive: true });
-
-        galleryCarousel.addEventListener('touchend', () => {
-            setTimeout(startCarouselScroll, 3000);
-        }, { passive: true });
-
-        galleryCarousel.addEventListener('mouseenter', () => {
-            if (carouselInterval) {
-                clearInterval(carouselInterval);
-                carouselInterval = null;
+    modalButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const modalId = btn.getAttribute('data-modal');
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
             }
         });
+    });
 
-        galleryCarousel.addEventListener('mouseleave', () => {
-            startCarouselScroll();
+    doctorCloseButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const modal = btn.closest('.doctor-modal-overlay');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         });
-    }
+    });
+
+    doctorModals.forEach(modal => {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    });
 });
 

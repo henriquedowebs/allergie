@@ -302,17 +302,25 @@
 
             <!-- Image Gallery Carousel -->
             <div class="gallery-carousel-wrapper reveal">
-                <div class="gallery-carousel">
-                    <img src="https://placehold.co/800x600/f7ece1/352119?text=Teste+de+Alergia+1"
-                        alt="Teste de Alergia 1">
-                    <img src="https://placehold.co/800x600/f7ece1/352119?text=Teste+de+Alergia+2"
-                        alt="Teste de Alergia 2">
-                    <img src="https://placehold.co/800x600/f7ece1/352119?text=Teste+de+Alergia+3"
-                        alt="Teste de Alergia 3">
-                    <img src="https://placehold.co/800x600/f7ece1/352119?text=Teste+de+Alergia+4"
-                        alt="Teste de Alergia 4">
-                    <img src="https://placehold.co/800x600/f7ece1/352119?text=Teste+de+Alergia+5"
-                        alt="Teste de Alergia 5">
+                <div class="gallery-carousel-track">
+                    <!-- Group 1 -->
+                    <div class="gallery-carousel-group">
+                        <img src="assets/alergia1.webp" alt="Teste de Alergia 1">
+                        <img src="assets/alergia2.webp" alt="Teste de Alergia 2">
+                        <img src="assets/alergia3.webp" alt="Teste de Alergia 3">
+                        <img src="assets/alergia4.webp" alt="Teste de Alergia 4">
+                        <img src="assets/alergia5.webp" alt="Teste de Alergia 5">
+                        <img src="assets/alergia6.webp" alt="Teste de Alergia 6">
+                    </div>
+                    <!-- Group 2 (Duplicated) -->
+                    <div class="gallery-carousel-group">
+                        <img src="assets/alergia1.webp" alt="Teste de Alergia 1">
+                        <img src="assets/alergia2.webp" alt="Teste de Alergia 2">
+                        <img src="assets/alergia3.webp" alt="Teste de Alergia 3">
+                        <img src="assets/alergia4.webp" alt="Teste de Alergia 4">
+                        <img src="assets/alergia5.webp" alt="Teste de Alergia 5">
+                        <img src="assets/alergia6.webp" alt="Teste de Alergia 6">
+                    </div>
                 </div>
             </div>
 
@@ -637,6 +645,12 @@
                         cuidadosa.</p>
                     <p>Mais do que tratar doenças, nosso propósito é orientar e caminhar junto ao paciente promovendo
                         segurança e qualidade de vida.</p>
+                    <div class="about-buttons" style="margin-top: 32px; display: flex; gap: 16px; flex-wrap: wrap;">
+                        <button class="btn-cta" data-modal="modal-marina" style="padding: 12px 24px;">Saiba Mais Sobre
+                            Dra. Marina</button>
+                        <button class="btn-cta" data-modal="modal-flavia" style="padding: 12px 24px;">Saiba Mais Sobre
+                            Dra. Flávia</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -861,6 +875,52 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modals -->
+    <div id="modal-marina" class="doctor-modal-overlay">
+        <div class="doctor-modal-content">
+            <button class="doctor-modal-close" aria-label="Fechar">&times;</button>
+            <h3>Dra. Marina Rigoni Costa Moreira</h3>
+            <p class="doctor-modal-subtitle">Médica Alergista e Imunologista</p>
+            <p class="doctor-modal-crm">CRM 52.94664-8<br>RQE 29039 (Alergia e Imunologia) e 25959 (Pediatria)</p>
+            <ul class="doctor-modal-list">
+                <li>Graduação em Medicina na Universidade Federal do Estado do Rio de Janeiro</li>
+                <li>Internato sanduíche no Hospital Universitário de Santo Antonio / ICBAS/ Universidade do Porto -
+                    Porto/Portugal</li>
+                <li>Residência em Pediatria no Hospital Municipal Miguel Couto (HMMC)</li>
+                <li>Especialização em Alergia e Imunologia pela Policlínica Geral do Rio de Janeiro (PGRJ/UNIFASE)</li>
+                <li>Título de Especialista em Alergia e Imunologia pela Associação Brasileira de Alergia e Imunologia
+                    (ASBAI) e Associação Médica Brasileira (AMB)</li>
+                <li>Membro da EAACI (European Academy of Allergy & Clinical Immunology)</li>
+                <li>Membro da ASBAI (Associação Brasileira de Alergia e Imunologia)</li>
+                <li>Membro da comissão de alergia alimentar da ASBAI-RJ</li>
+                <li>Membro da comissão de mídias da ASBAI-RJ</li>
+                <li>Professora da Pós Graduação de Alergia e Imunologia HCE/UNIFASE (2018-2025)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-flavia" class="doctor-modal-overlay">
+        <div class="doctor-modal-content">
+            <button class="doctor-modal-close" aria-label="Fechar">&times;</button>
+            <h3>Dra Flávia Carvalho Loyola</h3>
+            <p class="doctor-modal-subtitle">Médica Alergista e Imunologista</p>
+            <p class="doctor-modal-crm">CRM 52.93921-8<br>RQE 29263 (Alergia e Imunologia)<br>18714 (Pediatria)<br>18715
+                (Infectologia pediátrica)</p>
+            <ul class="doctor-modal-list">
+                <li>Graduação em Medicina pela Faculdade de Ciências Médicas de Minas Gerais (FCMMG)</li>
+                <li>Residência em Pediatria pela Santa Casa de Misericórdia de Belo Horizonte - Minas Gerais</li>
+                <li>Residência em Infectologia pediátrica pelo Hospital das Clínicas da Universidade Federal de Minas
+                    Gerais (HC-UFMG)</li>
+                <li>Especialização em Alergia e Imunologia pela Policlínica Geral do Rio de Janeiro (PGRJ/UNIFASE)</li>
+                <li>Título de Especialista em Alergia e Imunologia pela Associação Brasileira de Alergia e Imunologia
+                    (ASBAI)</li>
+                <li>Membro da ASBAI (Associação Brasileira de Alergia e Imunologia)</li>
+                <li>Membro da comissão de alergia alimentar da ASBAI-RJ</li>
+                <li>Professora da Pós Graduação de Alergia e Imunologia HCE/UNIFASE (2015-2017)</li>
+            </ul>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="script.js"></script>
