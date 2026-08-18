@@ -1332,7 +1332,7 @@ footer {
 
 /* Clínica Tipo 3 Section (Figma Design) */
 .clinica-tipo-3-section {
-    background-color: var(--sand);
+    background-color: #885039;
     overflow: hidden;
 }
 
@@ -1365,14 +1365,14 @@ footer {
 .clinica-tipo-3-text h2 {
     font-family: var(--font-serif);
     font-size: 3rem;
-    color: var(--cocoa);
+    color: var(--cream);
     margin-bottom: 1rem;
     font-weight: 600;
 }
 
 .clinica-tipo-3-text p {
     font-size: 1rem;
-    color: var(--cocoa);
+    color: var(--cream);
     line-height: 1.6;
     margin-bottom: 2rem;
     max-width: 570px; /* Matching Figma text width constraint */
